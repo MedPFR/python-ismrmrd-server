@@ -106,15 +106,15 @@ open another command prompt to send the h5 file for reconstruction
 ```
 python3 client.py -c simplefft -o phantom_img.h5 phantom_raw.h5
 ```
-# -c, send the configuration to choose which .py script for reconstruction
+-c, send the configuration to choose which .py script for reconstruction
 
 using raw data from scanner, siemens_to_ismrmrd should be installed
 ```
 siemens_to_ismrmrd -Z -f gre.dat -o gre_raw.h5
 ```
-# -f, directory of the input file
-# -o, directory of the output file
-# -Z, Convert all acquisitions from a multi-measurement (multi-RAID) file
+-f, directory of the input file
+-o, directory of the output file
+-Z, Convert all acquisitions from a multi-measurement (multi-RAID) file
 
 using dicom data
 ```
@@ -149,12 +149,14 @@ ismrmrdviewer
 
 
 ### -------------not important----------------
-#for now, environment needs only two things to be taken care of, bart and python
-#	bart once installed, only bart in the source folder bart is important, so it could be moved to one of the default workdir folder, and the python folder to python path
-#	pathon path should be set by .sh in the cmd (last line of Dockfile)
-#for the /etc/environment, using the following
+for now, environment needs only two things to be taken care of, bart and python
+	bart once installed, only bart in the source folder bart is important, so it could be moved to one of the default workdir folder, and the python folder to python path
+	pathon path should be set by .sh in the cmd (last line of Dockfile)
+for the /etc/environment, using the following
+```
 RUN echo "MKL_THREADING_LAYER=GNU" >> /etc/environment #append, > write
 RUN echo "#/bin/bash \n/opt/code/python-ismrmrd-server/main.py -v -H=0.0.0.0 -p=9002 -l=/tmp/share/debug/python-ismrmrd-server.log" >> /usr/bin/start_server
+```
 
 #to test the chroot image
 #find a mount point outside the home directory

@@ -4,7 +4,7 @@
 #
 # First argument is path to log file.  If no argument is provided,
 # logging is done to stdout (and discarded)
-
+export PYTHONPATH=/opt/code/pythonpath
 # Set Python's default temp folder to one that's shared with the host so that
 # it's less likely to accidentally fill up the chroot
 export TMPDIR=/tmp/share
